@@ -1,0 +1,163 @@
+## Phần A: Đọc hiểu
+
+### Câu A1:
+
+1. type="email" → Ô nhập text, tự kiểm tra có @ → Dùng cho form đăng ký
+2. type="password" -> Ô nhập text, ẩn kí tự -> Dùng cho đăng nhập
+3. type="number" -> Ô nhập số, có tăng giảm, tự validate chỉ nhập số -> Dùng trong việc chọn số lượng sản phẩm
+4. type="tel" -> Ô nhập số điện thoại, hiển thị bàn phím số trên mobile -> Dùng để nhập SĐT giao hàng
+5. type="search" -> Ô tìm kiếm -> Dùng để tìm kiếm sản phẩm
+6. type="url" -> Ô nhập link, kiểm tra đúng định dạng của URL -> Dùng để nhập link website shop
+7. type="checkbox" -> Ô tích chọn nhiều -> Dùng cho việc lọc sản phẩm
+8. type="radio" -> Chọn 1 trong nhiều option -> Dùng để chọn phương thức thann toán
+9. type="date" -> Chọn ngày, tự validate định dạng ngày -> Dùng cho nhập ngày, tháng, năm, sinh
+10. type="submit" -> Nút gửi form -> Dùng cho nút đặt hàng
+
+### Câu A2:
+
+- Trường hợp 1: Không submit được. Vì thuộc tính `required` bắt buộc nhập phải có giá trị, khi người dùng để trống sẽ thông báo lỗi
+  ![alt text](screenshorts/image-4.png)
+
+- Trường hợp 2: Không submit được. Vì `type="email"` sẽ kiểm tra định dạng email có `@` hay không, khi người dùng nhập `"abc" ` thì sẽ thông báo lỗi
+  ![alt text](screenshorts/image-3.png)
+- Trường hợp 3: Không submit được. Vì có thuộc tính `min="1" và max="10"`, khi người dùng nhập `15` thì nó vượt qua khoảng này sẽ thông báo lỗi
+  ![alt text](screenshorts/image-2.png)
+- Trường hợp 4: Không submit được. Vì thuộc tính `pattern="[0-9]{10}"` yêu cầu đúng 10 chữ số, khi nhập `"abc123"` chứa chữ cái và không đủ 10 kí tự thì sẽ báo lỗi
+  ![alt text](screenshorts/image-1.png)
+- Trường hợp 5: Không submit được. Vì `minlength="8"` nghĩa là phải nhập tối thiểu 8 kí tự, khi người dùng nhập `"123"` nghĩa là chưa đủ độ dài tối thiểu nên thông báo lỗi
+  ![alt text](screenshorts/image.png)
+
+### Câu A3:
+
+- `<label for="email">` quan trọng cho người dùng screen reader vì:
+  - screen reader sẽ đọc nội đung của label trước rồi mới đọc input
+  - `for="email"` liên kết với `id="email` cho biết label này thuộc input nào
+  - Nếu không có người dùng screen reader không biết nhập gì
+- Dùng `<fieldset> + <legend>` dùng cho nhóm liên quan với nhau
+  - `<fieldset>`: nhóm lại
+  - `<legend>`: tiêu đề của nhóm
+  - Ví dụ:
+
+  ```
+  <fieldset>
+  <legend>Thông tin cá nhân</legend>
+  <label for="age">Tuổi:</label>
+  <input type="text" id="age" name="age">
+  </fieldset>
+  ```
+
+- `aria-label` dùng khi không có text hiển thị nhưng vẫn cần mô tả  
+  Không nên dùng `aria-label` khi đã có `<label>` vì `aria-label` sẽ ghi đè nội dung trong screen reader, dễ gây sai lệch hoặc trùng thông tin
+
+### Câu A4:
+
+1.
+
+- `loading="lazy"` là thuộc tính trì hoãn việc tải ảnh cho đến khi ảnh đó chuẩn bị lọt vào khunh hình của người dùng
+- Cải thiện:
+  - Tăng tốc độ tải trang ban đầu: Trình duyệt không cần phải tốn băng thông để tải hàng chục tấm ảnh ở phía dưới trang lúc mới mở
+  - Tiết kiệm dữ liệu: Người dùng chỉ tải những gì mà họ thấy. Nếu họ rời trang trước khi cuộn xuống dưới, các ảnh đó sẽ không bao giờ được tải
+- Không nên dùng `lazy` cho ảnh banner, logo hoặc ảnh đầu tiên người dùng nhìn thấy khi mở trang. Nếu dùng `lazy` sẽ khiến cho ảnh hiện chậm, gây cảm giác trang bị trễ
+
+2.
+
+- Nên cung cấp nhiều `<source>` trong thẻ `<video>` vì không phải trình duyệt nào cũng hộ trợ cùng 1 định dạng video
+- Dùng nhiều `<source>` để:
+  - Tăng khả năng tương thích
+  - Đảm bảo video luôn phát được
+  - Fallback nếu format không chạy
+- 3 format video web phổ biến:
+  - mp4
+  - webm
+  - ogg
+
+3.
+
+- Thuộc tính `alt` trên `img` dùng để mô tả nội dung ảnh cho screen reader và hiển thị văn bản thay thế khi ảnh bị lỗi không hiển thị được
+- Viết `alt`:
+  - Ảnh sản phẩm iPhone 16: alt="IPhone 16 Pro 128GB Titan"
+  - Ảnh trang trí: alt="
+  - Ảnh biểu đồ doanh thu Q1/2026: alt="Biểu đồ doanh thu quý 1 năm 2026 tăng từ 1 tỷ lên 3.5 tỷ đồng"
+
+### Câu A5:
+
+- Dùng cách 1 khi ảnh chỉ để minh hoạ hoặc hỗ trợ nội dung, không cần chú thích riêng. Ví dụ:
+  - `<img src="icon-cart.png" alt="Giỏ hàng">`
+  - `<img src="avatar.jpg" alt="Ảnh đại diện của người dùng">`
+- Dùng cách 2 khi ảnh là nội dung chính, cần chú thích riêng. Ví dụ:
+
+  ```
+  <figure>
+  <img src="chart.png" alt="Biểu đồ doanh thu 2026">
+  <figcaption>Doanh thu tăng 40% trong năm 2026</figcaption>
+  </figure>
+  ```
+
+  ```
+  <figure>
+  <img src="bridge.jpg" alt="Cầu Vàng Đà Nẵng">
+  <figcaption>Cầu Vàng tại Đà Nẵng, hoàn thành năm 2018</figcaption>
+  </figure>
+  ```
+
+## Phần B:
+
+### Bài B1:
+
+- HTML không thể validate confirm password vì nó là ngôn ngữ đánh dấu dùng để cấu trúc giao diện, không có khả năng xử lí logic hay ghi nhớ giá trị để so sánh.
+
+## Phần C:
+
+### Bài C1:
+
+- Lỗi 1: Dòng Tên — Input "Tên" không có <label for="...">, vi phạm accessibility  
+  Sửa: `<label for="name">Tên:</label> <input type="text" id="name" name="name" required>`
+- Lỗi 2: Dòng email - Email chưa có `<label for="...">`, vi phạm accessibility  
+  Sửa: `<label for="email">Email:</label> <input type="email" id="email" name="email" placeholder="Email của bạn" required>`
+- Lỗi 3: Dòng mật khẩu - password chưa có `<label for="...">`, vi phạm accessibility  
+  Sửa: `<label for="password">Mật khẩu:</label> <input type="password" id="password" name="password" required>`
+- Lỗi 4: Dòng nhập lại mật khẩu - chưa có `<label for="...">`, vi phạm accessibility  
+  Sửa: `<label for="confirmPassword">Nhập lại mật khẩu:</label> <input type="password" id="confirmPassword" name="confirmPassword" required>`
+- Lỗi 5: Dòng phone - Thếu `<label for="...">` và sử dụng `type="text"` thay vì `type="tel"`, vi phạm accessibility và không tối ưu giao diện bàn phím trên mobile  
+  Sửa: `<label for="phone">Phone:</label> <input type="tel" id="phone" name="phone" value="0901234567" required>`
+- Lỗi 6: Dòng select - `<select>` không có `<label>`, vi phạm accessibility  
+  Sửa:
+
+```
+    <label for="city">Thành phố:</label>
+    <select id="city" name="city" required>
+        <option value="hn">Hà Nội</option>
+        <option value="hcm">TP.HCM</option>
+    </select>
+```
+
+- Lỗi 7: Tích vào đồng ý điều khoản không dùng input checkbox
+  Sửa: `<label> <input type="checkbox" name="agree" required>Tôi đồng ý điều khoản </label>`
+- Lỗi 8: submit không có button, thiếu aria-label  
+  Sửa: `<button type="submit" aria-label="Gửi form">Gửi</button>`
+
+### Bài C2:
+
+1.
+
+- pattern cho CCCD: `pattern="^\d{12}$"`
+- pattern cho số tài khoản: `pattern="^\d{10,15}$"`
+
+2.
+
+- HTML5 validation không đủ an toàn cho ngân hàng. Vì:
+  - Chỉ nhằm mục đích nâng cao trải nghiệm người dùng
+  - Người dùng có thể tắ validation, sửa code bằng DevTools hoặc gửi request trực tiếp mà không thông qua các ràng buộc của giao diện
+
+3.
+
+- 3 loại validation mà HTML5 KHÔNG THỂ làm được:
+  - So sánh giữa các trường
+  - Kiểm tra dữ liệu từ sever
+  - Xử lí logic phức tạp
+
+4.
+
+- 2 rủi ro bảo mật nếu chỉ validate trên Frontend mà không validate Backend:
+  - Tấn công bảo mật
+  - Sai lệch logic
