@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+</head>
+<body>
+    <header> <!-- chứa logo và menu điều hướng chính -->
+        <h1>ShopTLU</h1>
+        </a>
+        <nav href = "/" aria-label="Điều hướng chính"> <!-- dùng cho menu điều hướng  -->
+            <ol>
+                <li><a href="/about">Giới thiệu</a></li>
+                <li><a href="/products">Sản phẩm</a></li>
+                <li><a href="/contact">Liên hệ</a></li>
+            </ol>           
+        </nav>
+    </header>
+    <main> <!-- nội dung chính của trang -->
+        <nav aria-label="breadcumb">  <!-- Breadcrumb: dùng nav vì là điều hướng dạng phân cấp -->
+            <ol> <!-- ol vì breadcrumb có thứ tự -->
+                <li><a href="/">Trang chủ</a></li>
+                <li><a href="/">Điện thoại</a></li>
+                <li><a href="/">Iphone 16</a></li>
+            </ol>
+        </nav>
+
+        <section> <!-- nhóm nội dung chi tiết sản -->
+            <article>
+                <figure> <!-- dùng figure vì có hình ảnh và chú thích liên quan đến nhau -->
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSkB7ATQXTngm5YpF-m_KOQ8XC0r_ouzyX0nVJnYHIacSVNcYVjPxzNIDqXiNLCtAovuhR7ZVJ0M_1tK0c96Aq6qVyiIAo_ZnXm1TutuTAVZbfkiUN7bXqp-algCWZxqpWa4ZogZXU&usqp=CAc" alt="Iphone 16"> <!-- dùng img để hiển thị hình ảnh sản phẩm -->
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSkB7ATQXTngm5YpF-m_KOQ8XC0r_ouzyX0nVJnYHIacSVNcYVjPxzNIDqXiNLCtAovuhR7ZVJ0M_1tK0c96Aq6qVyiIAo_ZnXm1TutuTAVZbfkiUN7bXqp-algCWZxqpWa4ZogZXU&usqp=CAc" alt="Iphone 16">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSkB7ATQXTngm5YpF-m_KOQ8XC0r_ouzyX0nVJnYHIacSVNcYVjPxzNIDqXiNLCtAovuhR7ZVJ0M_1tK0c96Aq6qVyiIAo_ZnXm1TutuTAVZbfkiUN7bXqp-algCWZxqpWa4ZogZXU&usqp=CAc" alt="Iphone 16">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSkB7ATQXTngm5YpF-m_KOQ8XC0r_ouzyX0nVJnYHIacSVNcYVjPxzNIDqXiNLCtAovuhR7ZVJ0M_1tK0c96Aq6qVyiIAo_ZnXm1TutuTAVZbfkiUN7bXqp-algCWZxqpWa4ZogZXU&usqp=CAc" alt="Iphone 16">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSkB7ATQXTngm5YpF-m_KOQ8XC0r_ouzyX0nVJnYHIacSVNcYVjPxzNIDqXiNLCtAovuhR7ZVJ0M_1tK0c96Aq6qVyiIAo_ZnXm1TutuTAVZbfkiUN7bXqp-algCWZxqpWa4ZogZXU&usqp=CAc" alt="Iphone 16">
+                    <figcaption>Hình ảnh sản phẩm</figcaption>
+                </figure>
+            </article>
+
+            <section> <!-- nhóm nội dung thông tin sản phẩm -->
+                <h2>Tên sản phẩm: Iphone 16</h2> <!-- dùng h2 vì là tiêu đề của phần thông tin sản phẩm -->
+                <p>Giá: 29.990.000 VNĐ</p> <!-- dùng p để hiển thị giá sản phẩm -->
+                <p>Đánh giá sao: 4.5/5</p> <!-- dùng p để hiển thị đánh giá sao -->
+                <p>Mô tả: Iphone 16 là một chiếc điện thoại.</p> <!-- dùng p để hiển thị mô tả sản phẩm -->
+            </section>
+
+            <section>
+                <h2>Thông số kỹ thuật</h2>
+                <table border="1"> <!-- dùng table để hiển thị thông số kỹ thuật dưới dạng bảng -->
+                    <thead>
+                        <tr>
+                            <th>Thông số</th> <!-- dùng th để định nghĩa tiêu đề cột -->
+                            <th>Chi tiết</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Camera</td> <!-- dùng td để định nghĩa ô dữ liệu -->
+                            <td>48 MP</td>
+                        </tr>
+                        <tr>
+                            <td>Pin</td>
+                            <td>4000 mAh</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Đánh giá sản phẩm</h2>
+                <article>
+                    <p>Đánh giá 1: Sản phẩm rất tốt, đáng mua!</p>
+                </article>
+                <article>
+                    <p>Bình luận: Chất lượng ổn, nhưng giá hơi cao.</p>
+                </article>
+            </section>
+        </section>
+
+        <aside> <!-- dùng aside vì là nội dung phụ liên quan đến sản phẩm chính -->
+            <h2>Sản phẩm tương tự</h2>
+            <article>
+                <p><a href="#">Iphone 15</a></p>
+            </article>
+        </aside>
+        <footer> <!-- dùng footer để chứa thông tin bản quyền và liên hệ -->
+            <p>&copy; 2026 ShopTLU. All rights reserved.</p>
+        </footer>
+    </main>
+</body>
+</html>

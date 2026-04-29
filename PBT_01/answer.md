@@ -16,7 +16,7 @@
   - Bước 7: Render
 
 - tab Network cho thấy thông tin của tất cả các HTTP request của trang  
-  ![alt text](image.png)
+  ![alt text](/screenshort/image.png)
 
 #### Câu A2:
 
@@ -105,3 +105,8 @@ Giải thích:
 ### Câu C2:
 
 Quan điểm "dùng `<div>` cho mọi thứ rồi thêm class là đủ" nghe có vẻ nhanh nhưng về kĩ thuật thì khá hạn chế. Đầu tiên là SEO, các công cụ tìm kiếm như Google sử dụng các thẻ sematic để hiểu cấu trúc và trọng tâm của trang web. Sử dụng đúng thẻ sẽ giúp bot xác định được đâu là nội dung chính, đâu là menu, đâu là bài viết. Thứ 2 là Accessibility, các công cụ hỗ trợ như trình đọc màn hình dựa vào các thẻ này để điều hướng người dùng khiếm thị. Nếu dùng hết là `<div>`, trình đọc màn hình sẽ coi toàn bộ trang là 1 khối văn bản phẳng, khiến người dùng không phân biệt được cấu trúc phân cấp thông tin. Ví dụ 1 trang tin tức dùng `<article>` cho mỗi bài viết. Screen render có thể liệt kê danh sách các bài và cho phép người dùng chọn nhanh bài cần đọc. Nếu dùng `<div>`, chức năng này gần như mất hoàn toàn. Tuy nhiên `<div>` vẫn có chỗ đứng. Nó phù hợp khi cần 1 container thuần để layout, ví dụ như 1 lớp wrapper cho grid hoặc các nhóm phần tử không mang ý nghĩa nội dung cụ thể.
+
+## Phần D:
+
+Link video:
+https://drive.google.com/file/d/1dTd9PJgHsoC4pZVEwuO0loYnRxB1VfgW/view?usp=drive_link
