@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <form action="#" method="POST">
+        <fieldset>
+            <legend>Thông tin cá nhân</legend>
+            <label for="name">Họ tên:</label>
+            <input type="text" id="name" name="name" placeholder="Nhập họ tên" 
+            required minlength="2" maxlength="50">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" 
+            placeholder="abc@gmail.com" required>
+
+            <label for="sdt">Số điện thoại:</label>
+            <input type="tel" id="sdt" name="sdt" 
+            placeholder="Nhập 10 chữ số" pattern="[0-9]{10}">
+
+            <label for="dob">Ngày sinh:</label>
+            <input type="date" id="dob" name="dob" max="2026-04-26">
+        </fieldset>
+
+        <fieldset>
+            <legend>Tài khoản</legend>
+            <label for="un">Username:</label>
+            <input type="text" id="un" name="un"
+            placeholder="3-20 kí tự" pattern="^[a-zA-Z0-9_]{3,20}$">
+
+            <label for="pwd">Mật khẩu:</label>
+            <input type="password" id="pwd" minlength="8" 
+            placeholder="Tối thiểu 8 kí tự, có chữ hoa và số" pattern="^(?=.*[A-Z])(?=.*[0-9]).+$">
+
+            <label for="confirm">Xác nhận mật khẩu:</label>
+            <input type="password" id="confirm" minlength="8"
+            placeholder="Nhập lại mật khẩu" pattern="^(?=.*[A-Z])(?=.*[0-9]).+$">
+        </fieldset>
+
+        <fieldset>
+            <legend>Thông tin giao hàng</legend>
+            <label for="city">Thành phố:</label>
+            <select id="city" name="city">
+                <option>Hà Nội</option>
+                <option>TP.HCM</option>
+                <option>Đà Nẵng</option>
+                <option>Hải Phòng</option>
+                <option>Ninh Bình</option>
+            </select>
+
+            <label for="district">Quận/Huyện:</label>
+            <select id="district" name="district">
+                <option>Quận 1</option>
+                <option>Quận 2</option>
+                <option>Quận 3</option>
+                <option>Quận 4</option>
+                <option>Quận 5</option>
+            </select>
+
+            <label for="address">Địa chỉ chi tiết:</label>
+            <textarea id="address" name="address" rows="3" placeholder="Nhập số nhà, tên đường..."></textarea>
+
+            <p>Giới tính:</p>
+            <label><input type="radio" name="gender" value="male">Nam</label>
+            <label><input type="radio" name="gender" value="female">Nữ</label>
+            <label><input type="radio" name="gender" value="other">Khác</label>
+        </fieldset>
+
+        <label><input type="checkbox" name="agree" required>Tôi đồng ý điều khoản</label>
+        <button type="submit">Đăng kí</button>
+        <button type="reset">Nhập lại</button>
+    </form>
+
+    <script>
+        const dob = document.getElementById("dob");
+
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, "0");
+        const dd = String(today.getDate()).padStart(2, "0");
+
+        dob.max = `${yyyy}-${mm}-${dd}`;
+    </script>
+</body>
+</html>
