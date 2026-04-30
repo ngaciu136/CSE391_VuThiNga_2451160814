@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixi Bank</title>
+</head>
+<body>
+    <header>
+        <h1>Mixi Bank</h1>
+    </header>
+    <form action="#" method="POST">
+        <fieldset>
+            <legend>Thông tin cá nhân</legend>
+            <label for="cccd">CCCD:</label>
+            <input type="text" id="cccd" name="cccd" required pattern="^\d{12}$" placeholder="Nhập 12 chữ số">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="abc@gmail.com">
+
+            <label for="stk">Số tài khoản:</label>
+            <input type="text" id="stk" name="stk" required pattern="^\d{10,15}$" placeholder="Nhập 10-15 chữ số">
+
+            <label for="pin">Mã PIN:</label>
+            <input type="password" id="pin" name="pin" required pattern="^\d{6}$" placeholder="Nhập 6 chữ số">
+        </fieldset>
+        <button type="submit">Đăng kí</button>
+    </form>
+</body>
+</html>
