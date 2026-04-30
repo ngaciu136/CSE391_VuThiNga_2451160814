@@ -15,7 +15,7 @@
   - Bước 6: Parse HTML -> DOM/ CSSOM
   - Bước 7: Render
 
-- tab Network cho thấy thông tin của tất cả các HTTP request của trang  
+- Tab Network cho thấy thông tin của tất cả các HTTP request của trang  
   ![alt text](/screenshort/image.png)
 
 #### Câu A2:
