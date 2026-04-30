@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt hàng</title>
+</head>
+<body>
+    <h1>Đặt hàng</h1>
+    <h2>Giỏ hàng</h2>
+    <table border="1">
+        <thead>
+            <tr>
+            <th>STT</th>
+            <th>Sản phẩm</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Cushion</td>
+            <td>259.000đ</td>
+            <td>2</td>
+            <td>518.000đ</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Serum dưỡng ẩm</td>
+            <td>379.000đ</td>
+            <td>1</td>
+            <td>379.000đ</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Má hồng kem</td>
+            <td>179.000đ</td>
+            <td>1</td>
+            <td>179.000đ</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">Tổng cộng</td>
+            <td>1.076.000đ</td>
+        </tr>
+    </table>
+    <form>
+        <fieldset>
+            <legend>Thanh toán</legend>
+            <p>Phương thức thanh toán:</p>
+            <label><input type="radio" name="method" value="cod">COD</label>
+            <label><input type="radio" name="method" value="bank">Chuyển khoản</label>
+            <label><input type="radio" name="method" value="wallet">Ví điện tử</label>
+
+            <label for="note">Ghi chú:</label>
+            <textarea id="note" name="note" placeholder="Nhập ghi chú (nếu có)"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Thông tin giao hàng</legend>
+            <label for="deliveryDate">Ngày giao hàng:</label>
+            <input type="date" id="deliveryDate" name="deliveryDate">
+
+            <label for="timeSlot">Khung giờ</label>
+            <select id="timeSlot" name="timeSlot">
+                <option>Sáng (8h-12h)</option>
+                <option>Chiều (14h-18h)</option>
+                <option>Tối (18h-21h)</option>
+            </select>
+
+            <label for="time">Thời gian giao hàng:</label>
+            <input type="range" id="time" name="time" min="1" max="7" step="1">
+        </fieldset>
+        <button type="submit" aria-label="Xác nhận đặt hàng">Xác nhận đặt hàng</button>
+    </form>
+
+    <script>
+        const dateInput = document.getElementById('deliveryDate');
+        const d = new Date();
+        d.setDate(d.getDate() + 1);
+        dateInput.min = d.toISOString().split('T')[0];
+    </script>
+</body>
+</html> 
