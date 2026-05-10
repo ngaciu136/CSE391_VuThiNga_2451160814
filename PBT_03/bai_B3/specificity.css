@@ -1,0 +1,39 @@
+.p {
+    color: red;
+}
+
+.text{
+    color: blue;
+}
+
+.text.highlight {
+    color: green;
+}
+
+.p.text {
+    color: orange;
+}
+
+.p.text.highlight {
+    color: purple;
+}
+
+div.text {
+    color: brown;
+}
+
+#demo {
+    color: pink;
+}
+
+p#demo {
+    color: cyan;
+}
+
+.text#demo {
+    color: magenta;
+}
+
+p.text#demo {
+    color: darkblue;
+}
