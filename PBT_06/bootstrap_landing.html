@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .carousel-item img{
+            height: 500px;
+            object-fit: cover;
+            filter: brightness(60%);
+        }
+
+        .product-img{
+            height: 250px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-danger" href="#">Beauty Shop</a>
+            <button 
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Trang chủ</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sản phẩm</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex me-3">
+                    <input 
+                        class="form-control me-2" type="search" placeholder="Tìm kiếm">
+                    <button class="btn btn-outline-danger">Search</button>
+                </form>
+                <button class="btn btn-danger">🛒</button>
+            </div>
+        </div>
+    </nav>
+
+
+    <section>
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img 
+                        src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1400"
+                        class="d-block w-100"
+                        alt="slide">
+
+                    <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                        <h1 class="fw-bold">Big Sale 50%</h1>
+                        <p>Mỹ phẩm chính hãng giá tốt</p>
+
+                        <div>
+                            <button class="btn btn-danger btn-lg">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img 
+                        src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1400"
+                        class="d-block w-100"
+                        alt="slide">
+
+                    <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                        <h1 class="fw-bold">Skincare Collection</h1>
+                        <p>Chăm sóc da mỗi ngày</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img 
+                        src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1400"
+                        class="d-block w-100"
+                        alt="slide">
+
+                    <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                        <h1 class="fw-bold">New Arrival</h1>
+
+                        <p>Sản phẩm mới cập nhật</p>
+                    </div>
+                </div>
+            </div>
+
+            <button 
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button 
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Sản phẩm nổi bật</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="position-relative">
+                            <img 
+                                src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTFALDm3cyWQG0XBeBe6z5M8ZP8aYjWoRaS_-m6vlqCliFrVvyZvlehhJHRJQER-9n7lQzh_y0HrpbM__zez42Eli0u8ai4Mha1tFkNgsJZQv2OTPPiQ0KU"
+                                class="card-img-top product-img"
+                                alt="product">
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sale</span>
+                        </div>
+
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Serum dưỡng da</h5>
+                            <p class="card-text text-muted">Dưỡng ẩm và phục hồi da.</p>
+                            <p class="fw-bold text-danger">350.000₫</p>
+                            <button 
+                                class="btn btn-outline-danger mt-auto"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productModal">Xem nhanh</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img 
+                            src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRb2Y5-Vbq6b26JvM6kdY_Ux1q2wJFcj1eIzA-LzOJSFQw97zSloKMbbXsALixh411BFeEULjrHLe4P3Zaif7JAjzLzh7CbyuDk4g-UfFcmXT-3pHDnr_Oy3g"
+                            class="card-img-top product-img"
+                            alt="product">
+
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Kem chống nắng</h5>
+                            <p class="card-text text-muted">Bảo vệ da khỏi tia UV.</p>
+                            <p class="fw-bold text-danger">290.000₫</p>
+                            <button 
+                                class="btn btn-outline-danger mt-auto"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productModal">Xem nhanh</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img 
+                            src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSD5PGzh-e0u8wOj9PP0-S-At9jt9Ezj1YnyJMzQbPFe-1kz8KenoUdiBOxIOA6Xfo5AvzLGe4Faf9r3aj12llPUTxVL48fWNBia_E-jLac45YZEHGBcQtaPiAB"
+                            class="card-img-top product-img"
+                            alt="product">
+
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Son môi</h5>
+                            <p class="card-text text-muted">Màu son hot trend 2026.</p>
+                            <p class="fw-bold text-danger">220.000₫</p>
+                            <button 
+                                class="btn btn-outline-danger mt-auto"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productModal">Xem nhanh</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm">
+                        <img 
+                            src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcShtw7pUp-YZIRvnyvpRV6BtimWRCcqD-LHzT7NoMBWutoRfQvxr8W4Xyh9qa0v7kSSxXGoewTlUgKQnNRaOtxj5asWy20H4B3EAonNqEdXDRuRBHI-9xJPaw"
+                            class="card-img-top product-img"
+                            alt="product">
+
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Nước tẩy trang</h5>
+                            <p class="card-text text-muted">Làm sạch dịu nhẹ.</p>
+                            <p class="fw-bold text-danger">180.000₫</p>
+                            <button 
+                                class="btn btn-outline-danger mt-auto"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productModal">Xem nhanh</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="productModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chi tiết sản phẩm</h5>
+                    <button 
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <img 
+                        src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1000"
+                        class="img-fluid rounded mb-3"
+                        alt="product">
+
+                    <p>Sản phẩm dưỡng da cao cấp giúp phục hồi và cấp ẩm cho da.</p>
+
+                    <p class="fw-bold text-danger">Giá: 350.000₫</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button 
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">Đóng</button>
+
+                    <button class="btn btn-danger">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="fw-bold mb-3">Beauty Shop</h5>
+                    <p>Mỹ phẩm chính hãng chất lượng cao.</p>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="fw-bold mb-3">Danh mục </h5>
+                    <p>Skincare</p>
+                    <p>Makeup</p>
+                    <p>Body Care</p>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="fw-bold mb-3"> Hỗ trợ</h5>
+                    <p>Chính sách</p>
+                    <p>Thanh toán</p>
+                    <p>Liên hệ</p>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="fw-bold mb-3">Kết nối</h5>
+                    <p>Facebook</p>
+                    <p>Instagram</p>
+                    <p>TikTok</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
