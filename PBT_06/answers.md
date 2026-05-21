@@ -1,6 +1,8 @@
-# Phần A:
+# Track A
 
-## Câu A1:
+## Phần A
+
+### Câu A1:
 
 | Kích thước | < 768px | 768px - 991px | ≥ 992px |
 | ---------- | ------- | ------------- | ------- |
@@ -10,7 +12,7 @@
 - `col-md-6` nghĩa là từ breakpoint `md` trở lên (≥ 768px), phần tử chiếm 6/12 cột grid Bootstrap
 - Không cần viết `col-sm-12` vì Bootstrap dùng Mobile-First đã áp dụng cho mọi kích thước mặc định rồi
 
-## Câu A2:
+### Câu A2:
 
 1. `d-none d-md-block`
 
@@ -32,4 +34,20 @@
 - `.container-fluid`: luôn full width 100%
 - `.container-md`: trước md -> full width, từ md trở lên -> có max-width giống `.container`
 
-#
+## Phần C:
+
+### Câu C1:
+
+1. Đổi màu `$primary` từ xanh mặc định sang `#E63946`:
+
+- Cần: mã nguồn Bootstrap Sass, Sass Compiler
+- Quy trình:
+  - Khai báo/Định nghĩa lại màu mới cho biến $primary
+  - Import file cấu trúc gốc của Bootstrap nằm phía dưới dòng khai báo biến đó
+  - Biên dịch (Compile)
+
+2.  Không nên override trực tiếp` .btn-primary { background: red; }` mà nên dùng SASS variables vì:
+
+- Chỉ đổi được 1 component
+- Khó maintain
+- Dễ bị specificity conflict
