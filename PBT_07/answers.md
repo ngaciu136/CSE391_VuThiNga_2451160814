@@ -81,3 +81,28 @@ var html = `
 </div>
 `;
 ```
+
+# Phần C
+
+## Câu C1:
+
+- Lỗi 1: `if (giaSauGiam = 0)`.
+  - `=` là phép gán không phải phép so sánh
+  - Sửa: `if (giaSauGiam === 0)`
+
+- Lỗi 2: `tinhGiaGiamGia("100000", 20)`
+  - "100000" là kiểu string
+  - Sửa: `tinhGiaGiamGia(100000, 20)`
+- Lỗi 3: `var giamGia`
+  - `var` có function scope, dễ bug
+  - Sửa: `let giamGia`
+- Lỗi 4: Chưa kiểm tra `giaBan` hợp lệ
+  - Sửa: nên thêm
+  ```javascript
+  if (giaBan < 0) {
+    return "Giá bán không hợp lệ";
+  }
+  ```
+- Lỗi 5: Dùng `var` trong vòng lặp với `setTimeout`:
+  - `var` không có block scope nên sẽ in ra 5 `Item 5`
+  - sửa `for (let i = 0; i < 5; i++)`
