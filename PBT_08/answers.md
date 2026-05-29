@@ -157,3 +157,20 @@ const copy = { ...product };
 copy.specs.ram = 16;
 console.log(product.specs.ram); // 16 vì spread chỉ copy nông nên copy.specs và product.specs đang trỏ cùng đến 1 object
 ```
+
+# Phần C
+
+## Câu C1:
+
+```javascript
+const processOrders = (orders) =>
+    orders.filter(order.status === 'completed' && order.total > 100000)
+            .map(({id, customer, total}) =>( {
+                id,
+                customer,
+                total,
+                discount: total * 0.1,
+                finalTotal = total * 0.9
+            }))
+            .sort((a, b) => b.finalTotal - a.finalTotal)
+```
