@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Keyboard Accessibility Demo</h1>
+        <div id="gallery"></div>
+        <div class="controls">
+            <button id="prevBtn" aria-label="Previous image">Previous</button>
+            <button id="nextBtn" aria-label="Next image">Next</button>
+        </div>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Preview">
+        </div>
+    </div>
+
+    <div id="commandPalette" class="palette hidden">
+        <input
+            type="text"
+            id="commandInput"
+            placeholder="Type a command..."
+            aria-label="Command Search"
+        >
+        <ul id="commandList"></ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
